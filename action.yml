@@ -4,6 +4,10 @@ runs:
   using: docker
   image: Dockerfile
 inputs:
+  jekyll_dir:
+    description: Jekyll source directory
+    required: false
+    default: .
   destination_dir:
     description: Jekyll build/destination directory
     required: false
