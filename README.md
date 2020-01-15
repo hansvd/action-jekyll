@@ -1,5 +1,3 @@
-[![Docker Automated build](https://img.shields.io/docker/cloud/build/faph/action-jekyll)](https://cloud.docker.com/repository/docker/faph/action-jekyll/)
-
 # A GitHub Action for just building Jekyll web sites
 
 We're only building the site here. If you want to do some other stuff with those
@@ -25,14 +23,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v1
-      with:
-        ref: master
+      uses: actions/checkout@v2
     - name: Run Jekyll
-      uses: docker://faph/action-jekyll:1.5
+      uses: hansvd/action-jekyll@master
+      with:
+        jekyll_dir: docs
 ```
 
-Clones the repo and builds the site—that's it.
+Clones the repo and builds the site in docs/ — that's it.
 
 
 ## Caveats
